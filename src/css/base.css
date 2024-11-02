@@ -1,12 +1,11 @@
-/*** Fonts ***/
-
 /*** html & body ***/
 html {
   scroll-behavior: smooth;
 }
 body {
   background-color: #fff;
-  font-family: 'System UI', sans-serif;
+  font-family: var(--font-family);
+  background-color: var(--bg-dark-color);
 }
 .no-scroll {
   overflow: hidden;
@@ -41,92 +40,44 @@ body {
 
 /*** Buttons ***/
 .button {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-  color: #fbfbfb;
-  border-radius: 15px;
-  /* padding: 14px 32px; */
-  min-width: 143px;
-  height: 46px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #1b414b;
-  border: 1px solid #1b414b;
-}
-.button.is-secondary {
-  background-color: transparent;
-  border: 1px solid rgba(251, 251, 251, 0.35);
-}
-.button.is-submit {
-  /* padding: 12px 44px; */
-  min-width: 124px;
-  height: 46px;
+  display: inline-block;
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #1e1e1e;
+  background: #2dcbe0;
+  padding: 18px 24px;
 }
 @media screen and (min-width: 768px) {
-  .button {
-    /* padding: 16px 40px; */
-    min-width: 181px;
-    height: 52px;
-  }
-  .button.is-secondary {
-    font-size: 18px;
-    line-height: 1.1;
-    min-width: 181px;
-    height: 52px;
-  }
-  .button.is-submit {
-    /* padding: 18px 75px; */
-    font-size: 18px;
-    min-width: 196px;
-    height: 56px;
-  }
 }
-@media screen and (min-width: 1280px) {
-  .button {
-    /* padding: 18px 75px; */
-    min-width: 196px;
-    height: 56px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+@media screen and (min-width: 991px) {
+  .button:hover,
+  .button:focus-visible {
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
   }
-  .button.is-secondary {
-    min-width: 181px;
-    height: 52px;
-  }
+
   /* Hover/focus only for desktop */
   .button:hover,
-  .button:focus {
-    outline: none;
-    background-color: #fbfbfb;
-    color: #1b414b;
+  .button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 24px rgba(45, 203, 224, 0.3);
+  }
+  .button:active {
+    transform: translateY(0px);
+    box-shadow: none;
   }
 }
 
 /*** Container ***/
 .container {
-  max-width: 375px;
-  padding: 0 20px;
+  max-width: 345px;
+  padding: 0 24px;
   margin: 0 auto;
 }
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-    padding: 0 32px;
-  }
 }
 @media screen and (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-    padding: 0px 50px;
-  }
 }
 @media screen and (min-width: 1440px) {
-  .container {
-    max-width: 1340px;
-  }
 }
