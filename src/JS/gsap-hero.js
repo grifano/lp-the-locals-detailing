@@ -1,13 +1,18 @@
 import { gsap } from 'gsap';
-import SplitType from 'split-type';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-// Stagging Text animation
+gsap.registerPlugin(ScrollTrigger);
 
-const spliteType = new SplitType('.hero-main-text');
+gsap.from('.hero-futures-item', {
+  x: -100, // Start offset to the left
+  opacity: 0, // Start invisible
+  duration: 1, // Animation duration for each item
+  stagger: 0.2, // Delay between each item’s animation
+  ease: 'power2.out', // Easing function
 
-gsap.to('.word', {
-  y: 0,
-  stagger: 0.05,
-  delay: 0.2,
-  duration: 0.1,
+  scrollTrigger: {
+    trigger: '.hero-futures-item', // Target element to watch for entering viewport
+    start: 'top 80%', // Trigger animation when item reaches 80% of the viewport height
+    toggleActions: 'play none none none', // Only play the animation when entering
+  },
 });
