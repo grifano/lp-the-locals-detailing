@@ -1,6 +1,9 @@
 .splide__pagination {
   margin-top: 16px;
   gap: 8px;
+  li {
+    flex-shrink: 0;
+  }
 }
 .splide__pagination__page {
   display: block;
