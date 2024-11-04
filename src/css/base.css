@@ -73,6 +73,10 @@ body {
   max-width: 345px;
   padding: 0 24px;
   margin: 0 auto;
+  &.is-small {
+    max-width: 301px;
+    padding: 0 46px;
+  }
 }
 @media screen and (min-width: 768px) {
 }
